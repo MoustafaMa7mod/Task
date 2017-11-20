@@ -10,7 +10,7 @@ class LoginViewController: UIViewController {
     // MARK: - Main Function
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = true
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 self.user.userID = (session?.userID)!
@@ -18,11 +18,11 @@ class LoginViewController: UIViewController {
                 self.user.authToken = (session?.authToken)!
                 self.user.authTokenSecret = (session?.authTokenSecret)!
                 self.user.saveUser(user: self.user)
+                print("ID \(self.user.loadUser().userID)")
                 
+                let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                self.navigationController?.pushViewController(viewController, animated: true)
                 
-                
-                
-                print("signed in as \(String(describing: (session?.userName)!))");
             } else {
                 print("error: \(String(describing: error?.localizedDescription))");
             }
@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 
 

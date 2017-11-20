@@ -5,7 +5,7 @@ struct UserInfo {
     var userName: String!
     var userID: String!
     var authToken: String!
-    var authTokenSecret: String
+    var authTokenSecret: String!
     
     init() {
         userName = ""
@@ -26,7 +26,7 @@ struct UserInfo {
         user.userID = UserDefaults.standard.string(forKey: "userID")
         user.userName = UserDefaults.standard.string(forKey:"userName")
         user.authToken = UserDefaults.standard.string(forKey:"authToken")
-        user.authTokenSecret = UserDefaults.standard.string(forKey:"authTokenSecret")!
+        user.authTokenSecret = UserDefaults.standard.string(forKey:"authTokenSecret")
         return user
     }
     

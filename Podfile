@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'Twitter' do
   pod 'TwitterKit'
+  pod 'SDWebImage'
 end
