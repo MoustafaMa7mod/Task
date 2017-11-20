@@ -1,13 +1,7 @@
-//
-//  AppDelegate.swift
-//  Twitter
-//
-//  Created by Mostafa on 11/19/17.
-//  Copyright © 2017 Mostafa. All rights reserved.
-//
-
 import UIKit
 import CoreData
+import TwitterKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +10,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Twitter.sharedInstance().start(withConsumerKey: "3o4mcQiWD4IOY3sjcnaC5HBFS", consumerSecret: "VEv5ZJd78aWsvFMVJ389snmQsEjGl44hx0XSzoA9Shzkhkryhq")
         return true
+    }
+    
+   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+      return Twitter.sharedInstance().application(app, open: url, options: options)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
