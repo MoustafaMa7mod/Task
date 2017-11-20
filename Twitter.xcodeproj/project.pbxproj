@@ -20,6 +20,7 @@
 		E49408001FC1F76300DF3647 /* TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49407FF1FC1F76300DF3647 /* TwitterTests.swift */; };
 		E494080B1FC1F76300DF3647 /* TwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494080A1FC1F76300DF3647 /* TwitterUITests.swift */; };
 		E4A1201D1FC23CA1004E3CAD /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A1201C1FC23C8E004E3CAD /* SafariServices.framework */; };
+		E4B7EF341FC3870D004AC1DB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7EF331FC3870C004AC1DB /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E494080A1FC1F76300DF3647 /* TwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUITests.swift; sourceTree = "<group>"; };
 		E494080C1FC1F76300DF3647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4A1201C1FC23C8E004E3CAD /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		E4B7EF331FC3870C004AC1DB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				E434170C1FC2E4B000882DB8 /* LoginViewController.swift */,
 				E434170E1FC2E5A400882DB8 /* HomeViewController.swift */,
 				E43417101FC317CA00882DB8 /* FollowersTableViewCell.swift */,
+				E4B7EF331FC3870C004AC1DB /* Model.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -342,13 +345,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Twitter/Pods-Twitter-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -362,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B7EF341FC3870D004AC1DB /* Model.swift in Sources */,
 				E434170F1FC2E5A400882DB8 /* HomeViewController.swift in Sources */,
 				E434170B1FC2DE2E00882DB8 /* UserInfo.swift in Sources */,
 				E49407E81FC1F76000DF3647 /* AppDelegate.swift in Sources */,

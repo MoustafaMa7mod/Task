@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
 
@@ -35,7 +36,11 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! FollowersTableViewCell
-        
+
+        cell.userImage.sd_setImage(with: URL(string: "" ))
+        cell.userName.text = "Mostafa"
+        cell.userHandle.text = "@Doc"
+        cell.bio.text = "55dfdds5fdsdfds45fsdfds5fd"
         
         return cell
     }
@@ -45,7 +50,6 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     @objc func logout(){
         
         let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeNav")
-        
         user.userID = user.loadUser().userID
         user.userName = user.loadUser().userName
         user.authToken = user.loadUser().authToken
