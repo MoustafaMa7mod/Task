@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Twitter.sharedInstance().start(withConsumerKey: "3o4mcQiWD4IOY3sjcnaC5HBFS", consumerSecret: "VEv5ZJd78aWsvFMVJ389snmQsEjGl44hx0XSzoA9Shzkhkryhq")
         
-        if user.loadUser().userID != nil{
+        if UserInfo.loadUser().userID != nil{
             let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
             let nav = UINavigationController(rootViewController: viewController)
             self.window?.rootViewController = nav

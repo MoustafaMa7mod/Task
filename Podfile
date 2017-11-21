@@ -3,7 +3,8 @@
 use_frameworks!
 
 target 'Twitter' do
-  source 'https://github.com/CocoaPods/Specs.git'
-  pod 'TwitterKit'
   pod 'SDWebImage'
+  pod 'KVSpinnerView'
+  pod 'Toast-Swift'
+  pod 'TwitterKit'
 end

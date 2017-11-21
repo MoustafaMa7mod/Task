@@ -17,8 +17,8 @@ class LoginViewController: UIViewController {
                 self.user.userName = (session?.userName)!
                 self.user.authToken = (session?.authToken)!
                 self.user.authTokenSecret = (session?.authTokenSecret)!
-                self.user.saveUser(user: self.user)
-                print("ID \(self.user.loadUser().userID)")
+                UserInfo.saveUser(user: self.user)
+                print("ID \(UserInfo.loadUser().userID)")
                 
                 let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 self.navigationController?.pushViewController(viewController, animated: true)
