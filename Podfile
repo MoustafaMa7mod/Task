@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'Twitter' do
   pod 'SDWebImage'
-  pod 'KVSpinnerView'
+  pod 'MBProgressHUD'
   pod 'Toast-Swift'
   pod 'TwitterKit'
 end

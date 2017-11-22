@@ -1,6 +1,7 @@
 import UIKit
 import SDWebImage
 import TwitterKit
+import MBProgressHUD
 
 class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
 
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
           navigationItem.rightBarButtonItem = add
           navigationItem.title = "Followers"
           navigationItem.hidesBackButton = true
+        UserInfo.selectFolowers()
         
     }
     
@@ -28,7 +30,12 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
         
+        let hud = MBProgressHUD.showAdded(to: self.view, animated:true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.label.text = "Loading"
+        
         Model.followersList(closure: { (done, userFolloeList) in
+            hud.hide(animated: true)
             self.userFollowers = userFolloeList
             self.tableView.reloadData()
         })
@@ -82,9 +89,13 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let viewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
         
+        viewController.userID = userFollowers[indexPath.row].userID
+        viewController.userProfileImage = userFollowers[indexPath.row].userProfileImage
+        viewController.userHeaderImage = userFollowers[indexPath.row].userHeaderPhoto
         
-        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     //MARK: - Actions

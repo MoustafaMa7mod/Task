@@ -5,7 +5,6 @@ class Model: NSObject {
     
     class func followersList(closure: @escaping(Bool , [UserInfo]) -> Void){
         let client = TWTRAPIClient()
-        var followUsers = [UserInfo]()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/followers/list.json"
         let params = ["user_id":  UserInfo.loadUser().userID ]
         var clientError : NSError?
@@ -19,19 +18,41 @@ class Model: NSObject {
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-                print("json: \(json)")
-                followUsers = UserInfo.parseUser(dic: json["users"] as! [[String : Any]])
-                closure(true , followUsers)
-//                print("dic:  \(followUsers)")
-                
+//                print("json: \(json)")
+                let followUsers = UserInfo.parseUser(dic: json["users"] as! [[String : Any]])
+                closure(true , followUsers)                
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
             }
         }
     
     }
+    
+    class func getUserTweets(userID: String! , clousre: @escaping(Bool , [TweetContent]) -> Void){
+        let client = TWTRAPIClient()
+        let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+        let params = ["user_id":  userID]
+        var clientError : NSError?
         
+        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
         
+        client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+            if connectionError != nil {
+                print("Error: \(String(describing: connectionError))")
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                let user = json as! [Any]
+                print("json: \(user)")
+                let tweets = TweetContent.parsTweets(dic: user as! [[String : Any]])
+                clousre(true , tweets)
+            } catch let jsonError as NSError {
+                print("json error: \(jsonError.localizedDescription)")
+            }
+        }
+        
+    }
         
 }
     
