@@ -7,7 +7,6 @@ import TwitterKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var user = UserInfo()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Twitter.sharedInstance().start(withConsumerKey: "3o4mcQiWD4IOY3sjcnaC5HBFS", consumerSecret: "VEv5ZJd78aWsvFMVJ389snmQsEjGl44hx0XSzoA9Shzkhkryhq")
@@ -18,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = nav
         }
         
+//        UserInfo.removeUsersFromEntity()
         return true
     }
     

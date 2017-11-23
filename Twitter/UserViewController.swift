@@ -3,6 +3,7 @@ import SDWebImage
 import MBProgressHUD
 import AVKit
 import AVFoundation
+import Toast_Swift
 
 
 
@@ -11,7 +12,6 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     // MARK: - Outletsclass
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
@@ -29,6 +29,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     let avPlayerViewController = AVPlayerViewController()
     var avPlayer: AVPlayer?
     var heightTweet: Int!
+    var arrayOfIndexPath: [Int]!
+    var arrayOfType: [String]!
+
     
     // MARK: - Main Function
     override func viewDidLoad() {
@@ -41,8 +44,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        scrollView.contentSize = CGSize(width: 375, height: 700)
+        let reachability = Reachability()!
+
+        scrollView.contentSize = CGSize(width: 375, height: 750)
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
         profileImage.clipsToBounds = true
         
@@ -57,14 +61,32 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         hud.mode = MBProgressHUDMode.indeterminate
         hud.label.text = "Loading"
         
-        Model.getUserTweets(userID: userID) { (done, tweets) in
-            hud.hide(animated: true)
-            self.tweetUser = tweets
-            self.tableView.reloadData()
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                Model.getUserTweets(userID: self.userID) { (done, tweets) in
+                    hud.hide(animated: true)
+                    self.tweetUser = tweets
+                    self.tableView.reloadData()
+                }
+            } else {
+                Model.getUserTweets(userID: self.userID) { (done, tweets) in
+                    hud.hide(animated: true)
+                    self.tweetUser = tweets
+                    self.tableView.reloadData()
+                }
+            }
         }
-
-    }
-
+        reachability.whenUnreachable = { _ in
+            hud.hide(animated: true)
+            self.view.makeToast("No Internet Connection")
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+   
+ }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -88,7 +110,6 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         frame.size.height = contentSize.height
         cell.tweetText.frame = frame
         heightTweet = Int(cell.tweetText.frame.height)
-        
         selectedIndex = indexPath.row
         cell.collectionMedia.reloadData()
         cell.collectionMedia.tag = indexPath.row
@@ -114,27 +135,24 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellTweet", for: indexPath) as! MediaTweetsCollectionViewCell
-       
-        print(indexPath.row)
-        print(tweetUser[selectedIndex].mediaImage[indexPath.row])
         cell.mediaTweet.sd_setImage(with: URL(string: tweetUser[selectedIndex].mediaImage[indexPath.row]))
         cell.mediaTweet.layer.cornerRadius = 10
         cell.mediaTweet.clipsToBounds = true
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        print("ggg\(tweetUser[indexPath.row].type)")
-        //        print(indexPath.row)
-        if tweetUser[indexPath.row].type == "video" || tweetUser[indexPath.row].type == "animated_gif" {
-            let videoURL = URL(string: tweetUser[indexPath.row].videoURL)
+        if tweetUser[collectionView.tag].type == "video" || tweetUser[collectionView.tag].type == "animated_gif" {
+
+            let videoURL = URL(string: tweetUser[collectionView.tag].videoURL)
             let player = AVPlayer(url: videoURL!)
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
             self.present(playerViewController, animated: true) {
                 playerViewController.player!.play()
             }
-        }else  if tweetUser[indexPath.row].type == "photo"{
+        }else  if tweetUser[collectionView.tag].type == "photo"{
             slider = PEARImageSlideViewController()
             slider.setImageLists(tweetUser[collectionView.tag].mediaImage)
             slider.show(at: indexPath.row)
@@ -154,5 +172,21 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.present(viewController, animated: true, completion: nil)
     }
-
+    
+    
+    @IBAction func headerPhotoAction(_ sender: UIButton) {
+        slider = PEARImageSlideViewController()
+        slider.setImageLists([userHeaderImage])
+        slider.show(at: 0)
+    }
+    
+    
+    @IBAction func profilePhotoAction(_ sender: UIButton) {
+        slider = PEARImageSlideViewController()
+        slider.setImageLists([userProfileImage])
+        slider.show(at: 0)
+    }
+    
+    
 }
+

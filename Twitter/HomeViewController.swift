@@ -15,6 +15,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     var heightTextViewBio: Int!
     
     
+    
     //MARK: - Main Function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,32 +23,63 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
           navigationItem.rightBarButtonItem = add
           navigationItem.title = "Followers"
           navigationItem.hidesBackButton = true
-        UserInfo.selectFolowers()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
+
+        let reacability = Reachability()!
+       self.navigationController?.isNavigationBarHidden = false
         
         let hud = MBProgressHUD.showAdded(to: self.view, animated:true)
         hud.mode = MBProgressHUDMode.indeterminate
         hud.label.text = "Loading"
+
         
-        Model.followersList(closure: { (done, userFolloeList) in
+        reacability.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                Model.removeUsersFromEntity()
+                Model.followersList(closure: { (done, userFolloeList) in
+                    hud.hide(animated: true)
+                    self.userFollowers = userFolloeList
+                    self.tableView.reloadData()
+                })
+            } else {
+                Model.removeUsersFromEntity()
+                Model.followersList(closure: { (done, userFolloeList) in
+                    hud.hide(animated: true)
+                    self.userFollowers = userFolloeList
+                    self.tableView.reloadData()
+                })
+                
+            }
+        }
+        reacability.whenUnreachable = { _ in
+            self.userFollowers = []
             hud.hide(animated: true)
-            self.userFollowers = userFolloeList
+            self.userFollowers = Model.selectFolowers()
             self.tableView.reloadData()
-        })
-    }
+        }
+        do {
+            try reacability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged), name: .reachabilityChanged, object: reacability)
+//        do{
+//            try reacability.startNotifier()
+//        }catch{
+//            print("could not start reachability notifier")
+//        }
+
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
     //MARK: - Table View
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -110,4 +142,23 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         
         self.present(viewController, animated: true, completion: nil)
     }
+    
+    
+//    @objc func reachabilityChanged(note: Notification) {
+//        let reachability = note.object as! Reachability
+//        switch reachability.connection {
+//        case .wifi:
+//            print("Reachable via WiFi")
+//        case .cellular:
+//            print("Reachable via Cellular")
+//        case .none:
+//            print("Network not reachable")
+//        }
+//    }
+    
+    
 }
+
+
+
+

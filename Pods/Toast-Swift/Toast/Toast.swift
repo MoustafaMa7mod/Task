@@ -2,7 +2,7 @@
 //  Toast.swift
 //  Toast-Swift
 //
-//  Copyright (c) 2017 Charles Scalesse.
+//  Copyright (c) 2015-2017 Charles Scalesse.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the
@@ -57,7 +57,7 @@ public extension UIView {
      class that can be used with associated objects.
      */
     private class ToastCompletionWrapper {
-        var completion: ((Bool) -> Void)?
+        let completion: ((Bool) -> Void)?
         
         init(_ completion: ((Bool) -> Void)?) {
             self.completion = completion
@@ -181,8 +181,8 @@ public extension UIView {
     // MARK: - Hide Toast Methods
     
     /**
-     Hides the active toast. If there are mutiple toasts active in a view, this method
-     hides the oldest toast (the first of the three to have been presented).
+     Hides the active toast. If there are multiple toasts active in a view, this method
+     hides the oldest toast (the first of the toasts to have been presented).
      
      @see `hideAllToasts()` to remove all active toasts from a view.
      
@@ -196,25 +196,44 @@ public extension UIView {
     }
     
     /**
-     Hides all toast views and clears the queue.
+     Hides an active toast.
+     
+     @param toast The active toast view to dismiss. Any toast that is currently being displayed
+     on the screen is considered active.
+     
+     @warning this does not clear a toast view that is currently waiting in the queue.
+     */
+    public func hideToast(_ toast: UIView) {
+        guard activeToasts.contains(toast) else { return }
+        hideToast(toast, fromTap: false)
+    }
+    
+    /**
+     Hides all toast views.
      
      @param includeActivity If `true`, toast activity will also be hidden. Default is `false`.
+     @param clearQueue If `true`, removes all toast views from the queue. Default is `true`.
     */
-    public func hideAllToasts(includeActivity: Bool = false) {
-        queue.removeAllObjects()
-        
-        // remove the queue association now that we're empty
-        objc_removeAssociatedObjects(ToastKeys.queue)
+    public func hideAllToasts(includeActivity: Bool = false, clearQueue: Bool = true) {
+        if clearQueue {
+            clearToastQueue()
+        }
         
         activeToasts.flatMap { $0 as? UIView }
                     .forEach { hideToast($0) }
         
-        // remove the active toasts association now that we're empty
-        objc_removeAssociatedObjects(ToastKeys.activeToasts)
-        
         if includeActivity {
             hideToastActivity()
         }
+    }
+    
+    /**
+     Removes all toast views from the queue. This has no effect on toast views that are
+     active. Use `hideAllToasts(clearQueue:)` to hide the active toasts views and clear
+     the queue.
+     */
+    public func clearToastQueue() {
+        queue.removeAllObjects()
     }
     
     // MARK: - Activity Methods
@@ -338,11 +357,10 @@ public extension UIView {
         }
     }
     
-    private func hideToast(_ toast: UIView) {
-        hideToast(toast, fromTap: false)
-    }
-    
     private func hideToast(_ toast: UIView, fromTap: Bool) {
+        if let timer = objc_getAssociatedObject(toast, &ToastKeys.timer) as? Timer {
+            timer.invalidate()
+        }
         
         UIView.animate(withDuration: ToastManager.shared.style.fadeDuration, delay: 0.0, options: [.curveEaseIn, .beginFromCurrentState], animations: {
             toast.alpha = 0.0
@@ -350,23 +368,12 @@ public extension UIView {
             toast.removeFromSuperview()
             self.activeToasts.remove(toast)
             
-            if self.activeToasts.count == 0 {
-                // remove the active toasts association now that we're empty
-                objc_removeAssociatedObjects(ToastKeys.activeToasts)
-            }
-            
             if let wrapper = objc_getAssociatedObject(toast, &ToastKeys.completion) as? ToastCompletionWrapper, let completion = wrapper.completion {
                 completion(fromTap)
             }
             
             if let nextToast = self.queue.firstObject as? UIView, let duration = objc_getAssociatedObject(nextToast, &ToastKeys.duration) as? NSNumber, let point = objc_getAssociatedObject(nextToast, &ToastKeys.point) as? NSValue {
-                
                 self.queue.removeObject(at: 0)
-                if self.queue.count == 0 {
-                    // remove the queue association now that we're empty
-                    objc_removeAssociatedObjects(ToastKeys.queue)
-                }
-                
                 self.showToast(nextToast, duration: duration.doubleValue, point: point.cgPointValue)
             }
         }
@@ -376,8 +383,7 @@ public extension UIView {
     
     @objc
     private func handleToastTapped(_ recognizer: UITapGestureRecognizer) {
-        guard let toast = recognizer.view, let timer = objc_getAssociatedObject(toast, &ToastKeys.timer) as? Timer else { return }
-        timer.invalidate()
+        guard let toast = recognizer.view else { return }
         hideToast(toast, fromTap: true)
     }
     
@@ -396,13 +402,13 @@ public extension UIView {
      methods must be used to present the resulting view.
     
      @warning if message, title, and image are all nil, this method will throw
-     `ToastError.InsufficientData`
+     `ToastError.missingParameters`
     
      @param message The message to be displayed
      @param title The title
      @param image The image
      @param style The style. The shared style will be used when nil
-     @throws `ToastError.InsufficientData` when message, title, and image are all nil
+     @throws `ToastError.missingParameters` when message, title, and image are all nil
      @return The newly created toast view
     */
     public func toastViewForMessage(_ message: String?, title: String?, image: UIImage?, style: ToastStyle) throws -> UIView {

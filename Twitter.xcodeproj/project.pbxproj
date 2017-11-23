@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		073FC52CF9417E72B69996C6 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13264426B39BFA63E11B2FE4 /* Pods_Twitter.framework */; };
+		E40593BD1FC6D0E1000690ED /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40593BC1FC6D0E0000690ED /* Reachability.swift */; };
 		E4060CBA1FC577A500CF4BCE /* TweetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4060CB91FC577A500CF4BCE /* TweetsTableViewCell.swift */; };
 		E4060CBC1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4060CBB1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift */; };
 		E434170B1FC2DE2E00882DB8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434170A1FC2DE2E00882DB8 /* UserInfo.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		13264426B39BFA63E11B2FE4 /* Pods_Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB47EB75C7F9E32B7B87014E /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
+		E40593BC1FC6D0E0000690ED /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E4060CB91FC577A500CF4BCE /* TweetsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsTableViewCell.swift; sourceTree = "<group>"; };
 		E4060CBB1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTweetsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E434170A1FC2DE2E00882DB8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				E434170A1FC2DE2E00882DB8 /* UserInfo.swift */,
 				E434170C1FC2E4B000882DB8 /* LoginViewController.swift */,
 				E434170E1FC2E5A400882DB8 /* HomeViewController.swift */,
+				E40593BC1FC6D0E0000690ED /* Reachability.swift */,
 				E43417101FC317CA00882DB8 /* FollowersTableViewCell.swift */,
 				E4B7EF331FC3870C004AC1DB /* Model.swift */,
 				E4D937921FC4B75D00CCB6F6 /* UserViewController.swift */,
@@ -483,6 +486,7 @@
 				E4E5A7CA1FC5B591006812A3 /* PEARSlideView.m in Sources */,
 				E4060CBC1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift in Sources */,
 				E4E5A7CC1FC5B591006812A3 /* PEARZoomView.m in Sources */,
+				E40593BD1FC6D0E1000690ED /* Reachability.swift in Sources */,
 				E49407F01FC1F76100DF3647 /* Twitter.xcdatamodeld in Sources */,
 				E43417111FC317CA00882DB8 /* FollowersTableViewCell.swift in Sources */,
 				E4E5A7C61FC5B591006812A3 /* PEAR-AutoLayout-iOS-dummy.m in Sources */,
@@ -653,6 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VLATLH5XM;
 				INFOPLIST_FILE = Twitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spellad.Twitter;
@@ -669,6 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VLATLH5XM;
 				INFOPLIST_FILE = Twitter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spellad.Twitter;

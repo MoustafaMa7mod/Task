@@ -1,5 +1,5 @@
 import UIKit
-import CoreData
+
 
 class UserInfo: NSObject {
     
@@ -47,8 +47,8 @@ class UserInfo: NSObject {
     }
     
     class func parseUser(dic: [[String : Any]] ) -> [UserInfo]{
-        var userInfo = [UserInfo]()
         
+        var userInfo = [UserInfo]()
         for i in 0..<dic.count{
             let user = UserInfo()
          
@@ -61,58 +61,9 @@ class UserInfo: NSObject {
                 user.userHeaderPhoto = header
             }
            
-            insertUserFollowers(user: user)
+            Model.insertUserFollowers(user: user)
             userInfo.append(user)
         }
         return userInfo
     }
-    
-    class func insertUserFollowers(user: UserInfo){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let newUser = NSEntityDescription.insertNewObject(forEntityName: "UserFollowers", into: context)
-        
-        newUser.setValue(user.userID, forKey: "userID")
-        newUser.setValue(user.userName, forKey: "userName")
-        newUser.setValue(user.handle, forKey: "handle")
-        newUser.setValue(user.bio, forKey: "bio")
-        newUser.setValue(user.userHeaderPhoto, forKey: "userHeader")
-        newUser.setValue(user.userProfileImage, forKey: "userPhoto")
-        
-        do{
-            try context.save()
-            print("Done")
-        }catch{
-            print("Error")
-        }
-        
-    }
-    
-    class func selectFolowers(){
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UserFollowers")
-        
-        request.returnsObjectsAsFaults = false
-        
-        do{
-            let rows = try context.fetch(request)
-            if rows.count > 0{
-                for result in rows as! [NSManagedObject]{
-                    if let userName = result.value(forKey: "userName") as? String{
-                        print(userName)
-                    }
-                }
-                
-            }
-            
-        }catch{
-            
-        }
-        
-    }
-
-    
-    
 }
