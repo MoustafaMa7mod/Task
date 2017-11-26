@@ -15,6 +15,17 @@
 		E434170D1FC2E4B000882DB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434170C1FC2E4B000882DB8 /* LoginViewController.swift */; };
 		E434170F1FC2E5A400882DB8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434170E1FC2E5A400882DB8 /* HomeViewController.swift */; };
 		E43417111FC317CA00882DB8 /* FollowersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43417101FC317CA00882DB8 /* FollowersTableViewCell.swift */; };
+		E46A5C041FCACEF300734627 /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BF01FCACEE900734627 /* AutoLayout.m */; };
+		E46A5C051FCACEF300734627 /* PEARImageSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BF21FCACEE900734627 /* PEARImageSlideViewController.m */; };
+		E46A5C061FCACEF300734627 /* PEARSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BF41FCACEE900734627 /* PEARSlideView.m */; };
+		E46A5C071FCACEF300734627 /* PEARUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BF61FCACEE900734627 /* PEARUtility.m */; };
+		E46A5C081FCACEF300734627 /* PEARZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BF81FCACEE900734627 /* PEARZoomView.m */; };
+		E46A5C091FCACEF300734627 /* close_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E46A5BFA1FCACEE900734627 /* close_btn.png */; };
+		E46A5C0A1FCACEF300734627 /* PEARSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46A5BFB1FCACEE900734627 /* PEARSlideView.xib */; };
+		E46A5C0B1FCACEF300734627 /* PEARZoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E46A5BFC1FCACEE900734627 /* PEARZoomView.xib */; };
+		E46A5C0C1FCACEF300734627 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E46A5BFE1FCACEF200734627 /* Info.plist */; };
+		E46A5C0D1FCACEF300734627 /* PEAR-AutoLayout-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46A5BFF1FCACEF200734627 /* PEAR-AutoLayout-iOS-dummy.m */; };
+		E46A5C0E1FCACEF300734627 /* PEAR-AutoLayout-iOS.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E46A5C031FCACEF200734627 /* PEAR-AutoLayout-iOS.xcconfig */; };
 		E49407E81FC1F76000DF3647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49407E71FC1F76000DF3647 /* AppDelegate.swift */; };
 		E49407ED1FC1F76000DF3647 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E49407EB1FC1F76000DF3647 /* Main.storyboard */; };
 		E49407F01FC1F76100DF3647 /* Twitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E49407EE1FC1F76000DF3647 /* Twitter.xcdatamodeld */; };
@@ -58,6 +69,25 @@
 		E434170E1FC2E5A400882DB8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E43417101FC317CA00882DB8 /* FollowersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableViewCell.swift; sourceTree = "<group>"; };
 		E447F68979B524BF61ABF1AC /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
+		E46A5BEF1FCACEE900734627 /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayout.h; sourceTree = "<group>"; };
+		E46A5BF01FCACEE900734627 /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
+		E46A5BF11FCACEE900734627 /* PEARImageSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARImageSlideViewController.h; sourceTree = "<group>"; };
+		E46A5BF21FCACEE900734627 /* PEARImageSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARImageSlideViewController.m; sourceTree = "<group>"; };
+		E46A5BF31FCACEE900734627 /* PEARSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARSlideView.h; sourceTree = "<group>"; };
+		E46A5BF41FCACEE900734627 /* PEARSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARSlideView.m; sourceTree = "<group>"; };
+		E46A5BF51FCACEE900734627 /* PEARUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARUtility.h; sourceTree = "<group>"; };
+		E46A5BF61FCACEE900734627 /* PEARUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARUtility.m; sourceTree = "<group>"; };
+		E46A5BF71FCACEE900734627 /* PEARZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARZoomView.h; sourceTree = "<group>"; };
+		E46A5BF81FCACEE900734627 /* PEARZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARZoomView.m; sourceTree = "<group>"; };
+		E46A5BFA1FCACEE900734627 /* close_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_btn.png; sourceTree = "<group>"; };
+		E46A5BFB1FCACEE900734627 /* PEARSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PEARSlideView.xib; sourceTree = "<group>"; };
+		E46A5BFC1FCACEE900734627 /* PEARZoomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PEARZoomView.xib; sourceTree = "<group>"; };
+		E46A5BFE1FCACEF200734627 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E46A5BFF1FCACEF200734627 /* PEAR-AutoLayout-iOS-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEAR-AutoLayout-iOS-dummy.m"; sourceTree = "<group>"; };
+		E46A5C001FCACEF200734627 /* PEAR-AutoLayout-iOS-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEAR-AutoLayout-iOS-prefix.pch"; sourceTree = "<group>"; };
+		E46A5C011FCACEF200734627 /* PEAR-AutoLayout-iOS-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEAR-AutoLayout-iOS-umbrella.h"; sourceTree = "<group>"; };
+		E46A5C021FCACEF200734627 /* PEAR-AutoLayout-iOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "PEAR-AutoLayout-iOS.modulemap"; sourceTree = "<group>"; };
+		E46A5C031FCACEF200734627 /* PEAR-AutoLayout-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "PEAR-AutoLayout-iOS.xcconfig"; sourceTree = "<group>"; };
 		E49407E41FC1F76000DF3647 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49407E71FC1F76000DF3647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E49407EC1FC1F76000DF3647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +159,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E46A5BEE1FCACEE800734627 /* PEAR-ImageSlideViewer-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E46A5BEF1FCACEE900734627 /* AutoLayout.h */,
+				E46A5BF01FCACEE900734627 /* AutoLayout.m */,
+				E46A5BF11FCACEE900734627 /* PEARImageSlideViewController.h */,
+				E46A5BF21FCACEE900734627 /* PEARImageSlideViewController.m */,
+				E46A5BF31FCACEE900734627 /* PEARSlideView.h */,
+				E46A5BF41FCACEE900734627 /* PEARSlideView.m */,
+				E46A5BF51FCACEE900734627 /* PEARUtility.h */,
+				E46A5BF61FCACEE900734627 /* PEARUtility.m */,
+				E46A5BF71FCACEE900734627 /* PEARZoomView.h */,
+				E46A5BF81FCACEE900734627 /* PEARZoomView.m */,
+				E46A5BF91FCACEE900734627 /* resources */,
+			);
+			path = "PEAR-ImageSlideViewer-iOS";
+			sourceTree = "<group>";
+		};
+		E46A5BF91FCACEE900734627 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E46A5BFA1FCACEE900734627 /* close_btn.png */,
+				E46A5BFB1FCACEE900734627 /* PEARSlideView.xib */,
+				E46A5BFC1FCACEE900734627 /* PEARZoomView.xib */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E46A5BFD1FCACEF200734627 /* PEAR-AutoLayout-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E46A5BFE1FCACEF200734627 /* Info.plist */,
+				E46A5BFF1FCACEF200734627 /* PEAR-AutoLayout-iOS-dummy.m */,
+				E46A5C001FCACEF200734627 /* PEAR-AutoLayout-iOS-prefix.pch */,
+				E46A5C011FCACEF200734627 /* PEAR-AutoLayout-iOS-umbrella.h */,
+				E46A5C021FCACEF200734627 /* PEAR-AutoLayout-iOS.modulemap */,
+				E46A5C031FCACEF200734627 /* PEAR-AutoLayout-iOS.xcconfig */,
+			);
+			path = "PEAR-AutoLayout-iOS";
+			sourceTree = "<group>";
+		};
 		E49407DB1FC1F76000DF3647 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +241,8 @@
 				E4060CB91FC577A500CF4BCE /* TweetsTableViewCell.swift */,
 				E4060CBB1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift */,
 				E4A5DAB71FC57F8600F97E47 /* TweetContent.swift */,
+				E46A5BFD1FCACEF200734627 /* PEAR-AutoLayout-iOS */,
+				E46A5BEE1FCACEE800734627 /* PEAR-ImageSlideViewer-iOS */,
 				E4E5A7D01FC5B64D006812A3 /* BridgeHeader.h */,
 			);
 			path = Twitter;
@@ -304,8 +377,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49407F51FC1F76100DF3647 /* LaunchScreen.storyboard in Resources */,
+				E46A5C091FCACEF300734627 /* close_btn.png in Resources */,
+				E46A5C0A1FCACEF300734627 /* PEARSlideView.xib in Resources */,
+				E46A5C0B1FCACEF300734627 /* PEARZoomView.xib in Resources */,
 				E49407F21FC1F76100DF3647 /* Assets.xcassets in Resources */,
 				E49407ED1FC1F76000DF3647 /* Main.storyboard in Resources */,
+				E46A5C0C1FCACEF300734627 /* Info.plist in Resources */,
+				E46A5C0E1FCACEF300734627 /* PEAR-AutoLayout-iOS.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,15 +470,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46A5C051FCACEF300734627 /* PEARImageSlideViewController.m in Sources */,
 				E4B7EF341FC3870D004AC1DB /* Model.swift in Sources */,
 				E4D937931FC4B75D00CCB6F6 /* UserViewController.swift in Sources */,
 				E434170F1FC2E5A400882DB8 /* HomeViewController.swift in Sources */,
+				E46A5C071FCACEF300734627 /* PEARUtility.m in Sources */,
+				E46A5C0D1FCACEF300734627 /* PEAR-AutoLayout-iOS-dummy.m in Sources */,
 				E4A5DAB81FC57F8600F97E47 /* TweetContent.swift in Sources */,
 				E434170B1FC2DE2E00882DB8 /* UserInfo.swift in Sources */,
 				E49407E81FC1F76000DF3647 /* AppDelegate.swift in Sources */,
 				E434170D1FC2E4B000882DB8 /* LoginViewController.swift in Sources */,
+				E46A5C041FCACEF300734627 /* AutoLayout.m in Sources */,
 				E4060CBA1FC577A500CF4BCE /* TweetsTableViewCell.swift in Sources */,
+				E46A5C061FCACEF300734627 /* PEARSlideView.m in Sources */,
 				E4060CBC1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift in Sources */,
+				E46A5C081FCACEF300734627 /* PEARZoomView.m in Sources */,
 				E40593BD1FC6D0E1000690ED /* Reachability.swift in Sources */,
 				E49407F01FC1F76100DF3647 /* Twitter.xcdatamodeld in Sources */,
 				E43417111FC317CA00882DB8 /* FollowersTableViewCell.swift in Sources */,
