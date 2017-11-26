@@ -26,17 +26,6 @@
 		E4A5DAB81FC57F8600F97E47 /* TweetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A5DAB71FC57F8600F97E47 /* TweetContent.swift */; };
 		E4B7EF341FC3870D004AC1DB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7EF331FC3870C004AC1DB /* Model.swift */; };
 		E4D937931FC4B75D00CCB6F6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D937921FC4B75D00CCB6F6 /* UserViewController.swift */; };
-		E4E5A7C51FC5B591006812A3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E5A7B01FC5B590006812A3 /* Info.plist */; };
-		E4E5A7C61FC5B591006812A3 /* PEAR-AutoLayout-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7B11FC5B590006812A3 /* PEAR-AutoLayout-iOS-dummy.m */; };
-		E4E5A7C71FC5B591006812A3 /* PEAR-AutoLayout-iOS.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E4E5A7B51FC5B590006812A3 /* PEAR-AutoLayout-iOS.xcconfig */; };
-		E4E5A7C81FC5B591006812A3 /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7B81FC5B591006812A3 /* AutoLayout.m */; };
-		E4E5A7C91FC5B591006812A3 /* PEARImageSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7BA1FC5B591006812A3 /* PEARImageSlideViewController.m */; };
-		E4E5A7CA1FC5B591006812A3 /* PEARSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7BC1FC5B591006812A3 /* PEARSlideView.m */; };
-		E4E5A7CB1FC5B591006812A3 /* PEARUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7BE1FC5B591006812A3 /* PEARUtility.m */; };
-		E4E5A7CC1FC5B591006812A3 /* PEARZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E5A7C01FC5B591006812A3 /* PEARZoomView.m */; };
-		E4E5A7CD1FC5B591006812A3 /* close_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = E4E5A7C21FC5B591006812A3 /* close_btn.png */; };
-		E4E5A7CE1FC5B591006812A3 /* PEARSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E5A7C31FC5B591006812A3 /* PEARSlideView.xib */; };
-		E4E5A7CF1FC5B591006812A3 /* PEARZoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4E5A7C41FC5B591006812A3 /* PEARZoomView.xib */; };
 		E4E5A7D31FC5BC45006812A3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E5A7D11FC5BC29006812A3 /* AVFoundation.framework */; };
 		E4E5A7D41FC5BC45006812A3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4E5A7D21FC5BC33006812A3 /* AVKit.framework */; };
 /* End PBXBuildFile section */
@@ -86,25 +75,6 @@
 		E4A5DAB71FC57F8600F97E47 /* TweetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetContent.swift; sourceTree = "<group>"; };
 		E4B7EF331FC3870C004AC1DB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E4D937921FC4B75D00CCB6F6 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		E4E5A7B01FC5B590006812A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4E5A7B11FC5B590006812A3 /* PEAR-AutoLayout-iOS-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PEAR-AutoLayout-iOS-dummy.m"; sourceTree = "<group>"; };
-		E4E5A7B21FC5B590006812A3 /* PEAR-AutoLayout-iOS-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEAR-AutoLayout-iOS-prefix.pch"; sourceTree = "<group>"; };
-		E4E5A7B31FC5B590006812A3 /* PEAR-AutoLayout-iOS-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PEAR-AutoLayout-iOS-umbrella.h"; sourceTree = "<group>"; };
-		E4E5A7B41FC5B590006812A3 /* PEAR-AutoLayout-iOS.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "PEAR-AutoLayout-iOS.modulemap"; sourceTree = "<group>"; };
-		E4E5A7B51FC5B590006812A3 /* PEAR-AutoLayout-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "PEAR-AutoLayout-iOS.xcconfig"; sourceTree = "<group>"; };
-		E4E5A7B71FC5B591006812A3 /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayout.h; sourceTree = "<group>"; };
-		E4E5A7B81FC5B591006812A3 /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
-		E4E5A7B91FC5B591006812A3 /* PEARImageSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARImageSlideViewController.h; sourceTree = "<group>"; };
-		E4E5A7BA1FC5B591006812A3 /* PEARImageSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARImageSlideViewController.m; sourceTree = "<group>"; };
-		E4E5A7BB1FC5B591006812A3 /* PEARSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARSlideView.h; sourceTree = "<group>"; };
-		E4E5A7BC1FC5B591006812A3 /* PEARSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARSlideView.m; sourceTree = "<group>"; };
-		E4E5A7BD1FC5B591006812A3 /* PEARUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARUtility.h; sourceTree = "<group>"; };
-		E4E5A7BE1FC5B591006812A3 /* PEARUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARUtility.m; sourceTree = "<group>"; };
-		E4E5A7BF1FC5B591006812A3 /* PEARZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEARZoomView.h; sourceTree = "<group>"; };
-		E4E5A7C01FC5B591006812A3 /* PEARZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEARZoomView.m; sourceTree = "<group>"; };
-		E4E5A7C21FC5B591006812A3 /* close_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_btn.png; sourceTree = "<group>"; };
-		E4E5A7C31FC5B591006812A3 /* PEARSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PEARSlideView.xib; sourceTree = "<group>"; };
-		E4E5A7C41FC5B591006812A3 /* PEARZoomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PEARZoomView.xib; sourceTree = "<group>"; };
 		E4E5A7D01FC5B64D006812A3 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		E4E5A7D11FC5BC29006812A3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E4E5A7D21FC5BC33006812A3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -200,8 +170,6 @@
 				E4060CB91FC577A500CF4BCE /* TweetsTableViewCell.swift */,
 				E4060CBB1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift */,
 				E4A5DAB71FC57F8600F97E47 /* TweetContent.swift */,
-				E4E5A7AF1FC5B590006812A3 /* PEAR-AutoLayout-iOS */,
-				E4E5A7B61FC5B591006812A3 /* PEAR-ImageSlideViewer-iOS */,
 				E4E5A7D01FC5B64D006812A3 /* BridgeHeader.h */,
 			);
 			path = Twitter;
@@ -223,49 +191,6 @@
 				E494080C1FC1F76300DF3647 /* Info.plist */,
 			);
 			path = TwitterUITests;
-			sourceTree = "<group>";
-		};
-		E4E5A7AF1FC5B590006812A3 /* PEAR-AutoLayout-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E4E5A7B01FC5B590006812A3 /* Info.plist */,
-				E4E5A7B11FC5B590006812A3 /* PEAR-AutoLayout-iOS-dummy.m */,
-				E4E5A7B21FC5B590006812A3 /* PEAR-AutoLayout-iOS-prefix.pch */,
-				E4E5A7B31FC5B590006812A3 /* PEAR-AutoLayout-iOS-umbrella.h */,
-				E4E5A7B41FC5B590006812A3 /* PEAR-AutoLayout-iOS.modulemap */,
-				E4E5A7B51FC5B590006812A3 /* PEAR-AutoLayout-iOS.xcconfig */,
-			);
-			name = "PEAR-AutoLayout-iOS";
-			path = "../../../Spellad/d2d/D2D/PEAR-AutoLayout-iOS";
-			sourceTree = "<group>";
-		};
-		E4E5A7B61FC5B591006812A3 /* PEAR-ImageSlideViewer-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E4E5A7B71FC5B591006812A3 /* AutoLayout.h */,
-				E4E5A7B81FC5B591006812A3 /* AutoLayout.m */,
-				E4E5A7B91FC5B591006812A3 /* PEARImageSlideViewController.h */,
-				E4E5A7BA1FC5B591006812A3 /* PEARImageSlideViewController.m */,
-				E4E5A7BB1FC5B591006812A3 /* PEARSlideView.h */,
-				E4E5A7BC1FC5B591006812A3 /* PEARSlideView.m */,
-				E4E5A7BD1FC5B591006812A3 /* PEARUtility.h */,
-				E4E5A7BE1FC5B591006812A3 /* PEARUtility.m */,
-				E4E5A7BF1FC5B591006812A3 /* PEARZoomView.h */,
-				E4E5A7C01FC5B591006812A3 /* PEARZoomView.m */,
-				E4E5A7C11FC5B591006812A3 /* resources */,
-			);
-			name = "PEAR-ImageSlideViewer-iOS";
-			path = "../../../Spellad/d2d/D2D/PEAR-ImageSlideViewer-iOS";
-			sourceTree = "<group>";
-		};
-		E4E5A7C11FC5B591006812A3 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				E4E5A7C21FC5B591006812A3 /* close_btn.png */,
-				E4E5A7C31FC5B591006812A3 /* PEARSlideView.xib */,
-				E4E5A7C41FC5B591006812A3 /* PEARZoomView.xib */,
-			);
-			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,14 +303,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E5A7C71FC5B591006812A3 /* PEAR-AutoLayout-iOS.xcconfig in Resources */,
-				E4E5A7CF1FC5B591006812A3 /* PEARZoomView.xib in Resources */,
-				E4E5A7C51FC5B591006812A3 /* Info.plist in Resources */,
 				E49407F51FC1F76100DF3647 /* LaunchScreen.storyboard in Resources */,
 				E49407F21FC1F76100DF3647 /* Assets.xcassets in Resources */,
 				E49407ED1FC1F76000DF3647 /* Main.storyboard in Resources */,
-				E4E5A7CD1FC5B591006812A3 /* close_btn.png in Resources */,
-				E4E5A7CE1FC5B591006812A3 /* PEARSlideView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,24 +392,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E5A7C91FC5B591006812A3 /* PEARImageSlideViewController.m in Sources */,
 				E4B7EF341FC3870D004AC1DB /* Model.swift in Sources */,
 				E4D937931FC4B75D00CCB6F6 /* UserViewController.swift in Sources */,
 				E434170F1FC2E5A400882DB8 /* HomeViewController.swift in Sources */,
-				E4E5A7CB1FC5B591006812A3 /* PEARUtility.m in Sources */,
 				E4A5DAB81FC57F8600F97E47 /* TweetContent.swift in Sources */,
 				E434170B1FC2DE2E00882DB8 /* UserInfo.swift in Sources */,
 				E49407E81FC1F76000DF3647 /* AppDelegate.swift in Sources */,
 				E434170D1FC2E4B000882DB8 /* LoginViewController.swift in Sources */,
-				E4E5A7C81FC5B591006812A3 /* AutoLayout.m in Sources */,
 				E4060CBA1FC577A500CF4BCE /* TweetsTableViewCell.swift in Sources */,
-				E4E5A7CA1FC5B591006812A3 /* PEARSlideView.m in Sources */,
 				E4060CBC1FC577CE00CF4BCE /* MediaTweetsCollectionViewCell.swift in Sources */,
-				E4E5A7CC1FC5B591006812A3 /* PEARZoomView.m in Sources */,
 				E40593BD1FC6D0E1000690ED /* Reachability.swift in Sources */,
 				E49407F01FC1F76100DF3647 /* Twitter.xcdatamodeld in Sources */,
 				E43417111FC317CA00882DB8 /* FollowersTableViewCell.swift in Sources */,
-				E4E5A7C61FC5B591006812A3 /* PEAR-AutoLayout-iOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
